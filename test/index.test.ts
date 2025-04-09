@@ -1,7 +1,7 @@
-import chai from "chai";
+import { expect } from 'chai';
 import fs from "fs";
 import path from "path";
-import remark from "remark";
+import { remark } from "remark";
 import plugin from "../index.js";
 
 import { fileURLToPath } from 'url';
@@ -18,12 +18,12 @@ describe("Plugin", () => {
       .use(plugin)
       .process(input);
     const output = result.toString();
-    //fs.writeFileSync(path.resolve(__dirname, "./resources/actual.md"), output);
-    
-    chai.assert.equal(sanitized(output), sanitized(expected));
+    fs.writeFileSync(path.resolve(__dirname, "./resources/actual.md"), output);
+
+    expect(sanitized(output)).to.equal(sanitized(expected))
   });
 });
 
-function sanitized(input) {
+function sanitized(input: string) {
   return input.replace(/\r\n/g, "\n");
 }

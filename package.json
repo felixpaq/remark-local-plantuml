@@ -1,42 +1,62 @@
 {
-  "name": "@mstroppel/remark-local-plantuml",
+  "name": "@felixpaq/remark-local-plantuml",
   "version": "0.0.1",
   "description": "`remark-local-plantuml` is a simple plugin for [remarkjs](https://github.com/remarkjs/remark) that converts PlantUML code written in Markdown to inline image.",
   "type": "module",
-  "exports": "./index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
-    "test": "mocha --timeout 5000",
-    "coverage": "nyc npm run test",
-    "lint": "eslint ./index.js",
-    "lint-fix": "eslint --fix ./index.js"
+    "build": "tsc --pretty -p . -d",
+    "watch": "tsc -w -p .",
+    "mocha": "mocha --color --timeout 5000",
+    "test": "npm run build && npm run mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mstroppel/remark-local-plantuml.git"
+    "url": "git+https://github.com/felixpaq/remark-local-plantuml.git"
   },
-  "author": "mstroppel",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    }
+  },
+  "files": [
+    "./index.d.ts",
+    "./index.js",
+    "./index.js.map",
+    "./LICENSE"
+  ],
+  "author": "felixpaq",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mstroppel/remark-local-plantuml/issues"
+    "url": "https://github.com/felixpaq/remark-local-plantuml/issues"
   },
-  "homepage": "https://github.com/mstroppel/remark-local-plantuml#readme",
+  "homepage": "https://github.com/felixpaq/remark-local-plantuml#readme",
   "keywords": [
     "remark",
     "plantuml"
   ],
   "devDependencies": {
+    "@types/chai": "^5.0.0",
+    "@types/mdast": "^4.0.4",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "^20.0.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "mocha": "^10.2.0",
-    "nyc": "^15.0.0",
     "prettier": "^1.19.1",
-    "remark": "^11.0.2"
+    "remark": "^15.0.1",
+    "typescript": "^5.8.3",
+    "vfile": "^6.0.3"
   },
   "dependencies": {
-    "node-plantuml": "^0.9.0",
-    "unist-util-visit": "^2.0.2"
+    "node-plantuml-back": "^1.1.4",
+    "unist-util-visit": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

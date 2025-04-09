@@ -3,7 +3,14 @@
 
 ![NPM Build Status](https://github.com/mstroppel/remark-local-plantuml/actions/workflows/npmbuild.yml/badge.svg)
 
-`remark-local-plantuml` is a simple plugin for [remarkjs](https://github.com/remarkjs/remark) that converts PlantUML code locally to inline html SVG nodes.
+`@felixpaq/remark-local-plantuml` is a simple plugin for [remarkjs](https://github.com/remarkjs/remark) that converts PlantUML code locally to inline html SVG nodes.
+
+Forked for these reasons : 
+- Needed to update to node-plantuml-back
+- Adding collapsible block with plantuml source in it
+- Update packages to latest versions
+  
+Won't be maintained in the future unless I need to.
 
 ## Installing
 
