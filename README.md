@@ -1,7 +1,7 @@
 
 # Remark Simple PlantUML Plugin with local Rendering
 
-![NPM Build Status](https://github.com/mstroppel/remark-local-plantuml/actions/workflows/npmbuild.yml/badge.svg)
+![NPM Build Status](https://github.com/felixpaq/remark-local-plantuml/actions/workflows/npmbuild.yml/badge.svg)
 
 `@felixpaq/remark-local-plantuml` is a simple plugin for [remarkjs](https://github.com/remarkjs/remark) that converts PlantUML code locally to inline html SVG nodes.
 
